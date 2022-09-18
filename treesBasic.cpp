@@ -12,6 +12,8 @@ public:
     }
 };
 
+/* Given a binary tree, print its nodes according to the
+"bottom-up" postorder traversal. */
 void printPostorder(Node *node)
 {
     if (node == NULL)
@@ -25,6 +27,22 @@ void printPostorder(Node *node)
 
     // now deal with the node
     cout << node->data << " ";
+}
+
+/* Given a binary tree, print its nodes in inorder*/
+void printInorder(Node *node)
+{
+    if (node == NULL)
+        return;
+
+    /* first recur on left child */
+    printInorder(node->left);
+
+    /* then print the data of node */
+    cout << node->data << " ";
+
+    /* now recur on right child */
+    printInorder(node->right);
 }
 
 int main()
