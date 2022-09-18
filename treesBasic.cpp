@@ -45,6 +45,22 @@ void printInorder(Node *node)
     printInorder(node->right);
 }
 
+/* Given a binary tree, print its nodes in preorder*/
+void printPreorder(Node *node)
+{
+    if (node == NULL)
+        return;
+
+    /* first print data of node */
+    cout << node->data << " ";
+
+    /* then recur on left subtree */
+    printPreorder(node->left);
+
+    /* now recur on right subtree */
+    printPreorder(node->right);
+}
+
 int main()
 {
     return 0;
